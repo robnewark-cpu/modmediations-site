@@ -3,107 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Newark Firm | Attorneys & Counselors at Law</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Corporate Mediation & Dispute Resolution | Mediation on Demand, LLC</title>
+    <meta name="description" content="Streamlined private commercial, technological, and workplace mediation services designed to resolve high-consequence enterprise conflicts outside of public litigation panels.">
+    <style>
+        :root {
+            --bg-main: #ffffff;
+            --bg-card: #f8fafc;
+            --teal-accent: #0d9488;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --border-light: #e2e8f0;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-light);
+            position: fixed;
+            top: 0; left: 0; right: 0; z-index: 1000;
+        }
+        .nav-container {
+            max-width: 1200px; margin: 0 auto; padding: 20px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo { font-size: 1.4rem; font-weight: 700; color: var(--text-dark); text-decoration: none; text-transform: uppercase; letter-spacing: -0.5px; }
+        .logo span { color: var(--teal-accent); }
+        .nav-links { display: flex; gap: 25px; list-style: none; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+        .nav-links a:hover { color: var(--text-dark); }
+        .hero-section { max-width: 1100px; margin: 0 auto; padding: 160px 20px 60px 20px; text-align: center; }
+        .hero-title { font-size: 3rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px; letter-spacing: -1px; }
+        .hero-subtitle { font-size: 1.25rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 35px auto; }
+        .hero-actions { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
+        .btn-consultation {
+            background-color: var(--teal-accent); color: #ffffff; padding: 14px 28px;
+            border-radius: 6px; text-decoration: none; font-weight: 600;
+            box-shadow: 0 4px 6px -1px rgba(13, 148, 136, 0.2);
+        }
+        .btn-consultation:hover { background-color: #0f766e; }
+        .btn-intake {
+            background-color: transparent; color: var(--text-dark); border: 2px solid var(--text-dark);
+            padding: 12px 26px; border-radius: 6px; text-decoration: none; font-weight: 600;
+        }
+        .btn-intake:hover { background-color: var(--text-dark); color: #ffffff; }
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.2rem; }
+            .nav-links { display: none; }
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans flex flex-col min-h-screen">
-
-    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-tight text-slate-900">
-                <a href="index.html">NEWARK<span class="text-slate-500 font-light">FIRM</span></a>
-            </div>
-            <nav class="hidden md:flex space-x-8 font-medium text-sm tracking-wide text-gray-600 uppercase">
-                <a href="people.html" class="hover:text-slate-900 transition">People</a>
-                <a href="experience.html" class="hover:text-slate-900 transition">Experience</a>
-                <a href="about.html" class="hover:text-slate-900 transition">About Us</a>
-                <a href="insights.html" class="hover:text-slate-900 transition">Insights</a>
-                <a href="contact.html" class="hover:text-slate-900 transition">Contact</a>
-            </nav>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Mediation on Demand<span>, LLC</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html" style="color: var(--text-dark); font-weight: 600;">Home</a></li>
+                <li><a href="process.html">Digital Framework</a></li>
+                <li><a href="mediators.html">Our Panel</a></li>
+                <li><a href="index.html#services">Practice Areas</a></li>
+                <li><a href="intake.html">Case Intake</a></li>
+                <li><a href="join.html">Join Network</a></li>
+            </ul>
         </div>
     </header>
-
-    <section class="bg-slate-900 text-white py-32 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h1 class="text-4xl md:text-6xl font-serif font-semibold leading-tight max-w-3xl">
-                Solutions for Complex Legal Challenges.
-            </h1>
-            <p class="mt-6 text-xl text-slate-300 max-w-2xl font-light leading-relaxed">
-                For years, Newark Firm has provided trusted leadership, innovative counsel, and comprehensive transactional and litigation services across Texas and Oklahoma.
-            </p>
-        </div>
-    </section>
-
-    <main class="flex-grow max-w-7xl mx-auto px-6 py-20 w-full">
-        <div class="grid md:grid-cols-3 gap-12 items-start">
-            
-            <div class="space-y-4">
-                <h3 class="text-lg font-bold uppercase tracking-wider text-slate-950 border-b border-slate-300 pb-2">The Firm</h3>
-                <p class="text-gray-600 leading-relaxed text-sm">
-                    Built on a tradition of courtroom excellence and strategic corporate counsel tailored to protect your high-stakes legal interests. We reject boilerplate procedures in favor of calculated agility.
-                </p>
-                <div class="pt-2 space-y-3">
-                    <div class="flex items-start space-x-2">
-                        <span class="text-slate-900 font-bold text-sm">▪</span>
-                        <p class="text-xs font-semibold uppercase tracking-wider text-slate-800">Trial-Ready Representation</p>
+    <main>
+        <section class="hero-section">
+            <h1 class="hero-title">Modern Resolution for Complex Disputes</h1>
+            <p class="hero-subtitle">Streamlined corporate mediation services designed to settle commercial, technological, and infrastructure conflicts outside of public litigation panels.</p>
+            <div class="hero-actions">
+                <a href="mailto:info@modmediations.com?subject=Mediation%20Consultation%20Request" class="btn-consultation">Schedule a Consultation</a>
+                <a href="intake.html" class="btn-intake">Submit Case Intake</a>
+            </div>
+        </section>
+        <section id="services" class="practice-areas" style="padding: 80px 20px; background-color: #ffffff; color: var(--text-dark); text-align: center; border-top: 1px solid var(--border-light);">
+            <div style="max-width: 1100px; margin: 0 auto;">
+                <h2 style="font-size: 2.2rem; color: var(--teal-accent); margin-bottom: 12px; font-weight: 700;">Our Practice Areas</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 50px; font-size: 1.05rem;">Specialized mediation services tailored to resolve complex disputes with efficiency and clarity.</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 20px;">
+                    <div style="background-color: var(--bg-card); padding: 35px 30px; border-radius: 8px; border: 1px solid var(--border-light); border-top: 4px solid var(--teal-accent); text-align: left; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
+                        <h3 style="font-size: 1.35rem; margin-bottom: 15px;">Commercial & Business</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Resolving partnership breakups, contract disputes, and corporate conflicts smoothly without public litigation.</p>
                     </div>
-                    <div class="flex items-start space-x-2">
-                        <span class="text-slate-900 font-bold text-sm">▪</span>
-                        <p class="text-xs font-semibold uppercase tracking-wider text-slate-800">Predictive Risk Assessment</p>
+                    <div style="background-color: var(--bg-card); padding: 35px 30px; border-radius: 8px; border: 1px solid var(--border-light); border-top: 4px solid var(--teal-accent); text-align: left; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
+                        <h3 style="font-size: 1.35rem; margin-bottom: 15px;">Digital & Technology Assets</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Mediating intellectual property, software licensing, data infrastructure ownership, and modern tech framework conflicts.</p>
                     </div>
-                    <div class="flex items-start space-x-2">
-                        <span class="text-slate-900 font-bold text-sm">▪</span>
-                        <p class="text-xs font-semibold uppercase tracking-wider text-slate-800">Aligned to Business Objectives</p>
+                    <div style="background-color: var(--bg-card); padding: 35px 30px; border-radius: 8px; border: 1px solid var(--border-light); border-top: 4px solid var(--teal-accent); text-align: left; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
+                        <h3 style="font-size: 1.35rem; margin-bottom: 15px;">Workplace & Labor</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Facilitating executive disagreements, employment claims, and internal organizational structuring disputes for structural balance.</p>
                     </div>
                 </div>
             </div>
-
-            <div class="space-y-4">
-                <h3 class="text-lg font-bold uppercase tracking-wider text-slate-950 border-b border-slate-300 pb-2">Capabilities</h3>
-                <p class="text-gray-600 leading-relaxed text-sm">
-                    Providing comprehensive transactional counsel and aggressive litigation defense across Texas and Oklahoma:
-                </p>
-                <ul class="text-xs font-medium text-slate-700 space-y-2 pl-4 list-disc">
-                    <li><strong>Corporate Law & Transactions</strong></li>
-                    <li><strong>Personal Injury & Wrongful Death</strong></li>
-                    <li><strong>Criminal Defense & General Litigation</strong></li>
-                    <li><strong>Family Law & Domestic Relations</strong></li>
-                    <li><strong>Bankruptcy & Creditor/Debtor Relations</strong></li>
-                </ul>
-                <div class="pt-2">
-                    <a href="experience.html" class="text-xs font-bold uppercase tracking-widest text-slate-900 hover:text-slate-600 transition inline-flex items-center">
-                        Explore Our Practices <span class="ml-1">→</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="space-y-4">
-                <h3 class="text-lg font-bold uppercase tracking-wider text-slate-950 border-b border-slate-300 pb-2">Insights</h3>
-                <p class="text-gray-600 leading-relaxed text-sm">
-                    Stay informed with immediate legal analysis covering modern regulatory shifts, corporate compliance mandates, and defense landscape updates.
-                </p>
-                <div class="border-l-2 border-slate-200 pl-4 space-y-4">
-                    <div>
-                        <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400 block">Regulatory Update</span>
-                        <a href="insights.html" class="text-xs font-serif font-semibold text-slate-950 hover:underline block mt-0.5">
-                            Federal Guidelines Shift Tracker for Employer Record Retention Programs
-                        </a>
-                    </div>
-                    <div>
-                        <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400 block">Corporate Brief</span>
-                        <a href="insights.html" class="text-xs font-serif font-semibold text-slate-950 hover:underline block mt-0.5">
-                            Navigating Equity Volatility Vectors in Mid-Market M&A Structures
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+        </section>
     </main>
-
-    <footer class="bg-slate-950 text-slate-400 py-8 border-t border-slate-800 text-center text-sm w-full">
-        <p>&copy; 2026 Newark Firm. All Rights Reserved. <a href="disclaimer.html" class="underline hover:text-white ml-2">Disclaimer & Privacy Policy</a>.</p>
+    <footer style="background-color: #f8fafc; padding: 40px 20px; border-top: 1px solid var(--border-light); text-align: center; color: #475569; font-size: 0.9rem;">
+        <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
+            <p style="font-weight: 600; color: var(--text-dark);">Mediation on Demand<span>, LLC</span></p>
+            <p style="margin: 5px 0;">General Inquiries: <a href="mailto:info@modmediations.com" style="color: var(--teal-accent); text-decoration: none; font-weight: 600;">info@modmediations.com</a></p>
+            <p>&copy; 2026 Mediation on Demand, LLC. All legal rights reserved. | <a href="privacy.html" style="color: var(--teal-accent); text-decoration: none;">Privacy Policy</a></p>
+        </div>
     </footer>
-
 </body>
 </html>
