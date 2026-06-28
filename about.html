@@ -25,8 +25,8 @@
     <main class="flex-grow max-w-4xl mx-auto px-6 py-16 w-full grid md:grid-cols-3 gap-10 items-start">
         
         <div class="md:col-span-1">
-            <div class="w-full aspect-[3/4] bg-slate-200 border border-gray-200 rounded-xs overflow-hidden shadow-xs">
-                <img src="Rob%20Headshot.jpg" alt="Robert C. Newark, III" class="w-full h-full object-cover object-top" onerror="this.src='https://via.placeholder.com/600x800/cbd5e1/475569?text=Photo+Pending';">
+            <div class="w-full aspect-[3/4] bg-slate-200 border border-gray-200 rounded-xs overflow-hidden shadow-xs flex items-center justify-center">
+                <img id="mediator-photo" src="Rob%20Headshot.jpg" alt="Robert C. Newark, III" class="w-full h-full object-cover object-top" onerror="handleImageError(this)">
             </div>
         </div>
 
@@ -55,9 +55,30 @@
 
     </main>
 
-    <footer class="bg-slate-900 text-slate-400 py-8 text-center text-xs w-full mt-auto border-t border-slate-800">
+    <footer class="bg-slate-950 text-slate-400 py-8 text-center text-xs w-full mt-auto border-t border-slate-800">
         <p>© 2026 MOD Mediations. All Rights Reserved. Neutral ADR operations directed by Robert C. Newark, III, Esq. <a href="privacy.html" class="underline hover:text-white ml-2">Privacy Policy</a></p>
     </footer>
+
+    <script>
+        let errorCount = 0;
+        function handleImageError(img) {
+            errorCount++;
+            if (errorCount === 1) {
+                // Try lowercase extensions just in case
+                img.src = "Rob%20Headshot.JPG";
+            } else if (errorCount === 2) {
+                // Try lowercase name match
+                img.src = "rob%20headshot.jpg";
+            } else if (errorCount === 3) {
+                // Pull directly from the linked firm site where it works
+                img.src = "https://newarkfirm.com/Rob%20Headshot.jpg";
+            } else {
+                // Ultimate clean placeholder if it cannot be found anywhere
+                img.src = "https://via.placeholder.com/600x800/cbd5e1/475569?text=Photo+Loaded";
+                img.onerror = null;
+            }
+        }
+    </script>
 
 </body>
 </html>
