@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Mediator Panels | Mediation on Demand, LLC</title>
-    <meta name="description" content="Meet our principal corporate mediators, Robert Newark, Esq. and Tyler Wilson, Esq., specializing in business, labor liability triage, and high-volume commercial dispute resolution.">
+    <title>Our Neutral Panel | Mediation on Demand, LLC</title>
+    <meta name="description" content="Meet our neutral panel chairs and dispute resolution specialists, Robert C. Newark, III, Esq. and Tyler Wilson, Esq.">
     <style>
         :root { 
             --bg-main: #ffffff; 
@@ -16,6 +16,7 @@
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg-main); color: var(--text-dark); line-height: 1.6; }
+        
         header { background-color: rgba(255, 255, 255, 0.95); border-bottom: 1px solid var(--border-light); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-size: 1.4rem; font-weight: 700; color: var(--text-dark); text-decoration: none; text-transform: uppercase; letter-spacing: -0.5px; }
@@ -25,8 +26,12 @@
         .nav-links a:hover { color: var(--text-dark); }
         
         .main-container { max-width: 1100px; margin: 140px auto 60px auto; padding: 0 20px; }
-        .page-title { font-size: 2.2rem; font-weight: 800; color: var(--text-dark); margin-bottom: 10px; text-align: center; }
-        .page-subtitle { color: var(--text-muted); text-align: center; margin-bottom: 60px; font-size: 1.1rem; }
+        
+        /* Context Navigation Header Matrix */
+        .context-matrix { display: flex; gap: 30px; border-bottom: 1px solid var(--border-light); padding-bottom: 15px; margin-bottom: 50px; }
+        .matrix-link { text-decoration: none; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px; }
+        .matrix-link.active { color: var(--text-dark); border-bottom: 2px solid var(--text-dark); padding-bottom: 15px; margin-bottom: -17px; }
+        .matrix-link span { color: var(--teal-accent); margin-left: 2px; }
         
         .profile-row { display: flex; gap: 50px; flex-wrap: wrap; margin-bottom: 80px; padding-bottom: 60px; border-bottom: 1px solid var(--border-light); }
         .profile-row:last-of-type { border-bottom: none; margin-bottom: 20px; }
@@ -34,7 +39,7 @@
         .profile-photo-area { flex: 1; min-width: 300px; max-width: 320px; }
         .profile-image-container { 
             width: 100%; 
-            border-radius: 8px; 
+            border-radius: 6px; 
             border: 1px solid var(--border-light); 
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); 
             overflow: hidden;
@@ -43,21 +48,28 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-bottom: 20px;
         }
         .profile-image { width: 100%; height: 100%; object-fit: cover; display: block; }
         .fallback-text { color: var(--text-muted); font-size: 0.95rem; font-weight: 500; text-align: center; padding: 20px; }
         
         .profile-text-area { flex: 2; min-width: 300px; }
-        h2 { font-size: 2.2rem; margin-bottom: 5px; color: var(--text-dark); }
-        .title-tag { color: var(--teal-accent); font-size: 1.15rem; font-weight: 600; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .panel-role { font-size: 0.85rem; font-weight: 700; color: var(--teal-accent); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 5px; }
+        h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 2px; color: var(--text-dark); }
+        .bar-tag { color: var(--text-muted); font-size: 1.05rem; font-weight: 600; margin-bottom: 25px; }
         .bio-p { color: var(--text-muted); margin-bottom: 20px; font-size: 1.05rem; text-align: justify; }
         
-        .credentials-box { background-color: var(--bg-card); border: 1px solid var(--border-light); border-left: 4px solid var(--teal-accent); padding: 25px; border-radius: 6px; margin-top: 35px; }
-        .credentials-box h3 { margin-bottom: 12px; font-size: 1.1rem; color: var(--text-dark); text-transform: uppercase; letter-spacing: 0.5px; }
-        .credentials-box ul { list-style: none; color: var(--text-muted); font-size: 0.95rem; }
-        .credentials-box li { margin-bottom: 8px; position: relative; padding-left: 18px; }
-        .credentials-box li::before { content: "•"; color: var(--teal-accent); position: absolute; left: 0; font-weight: bold; }
+        .portfolio-box { background-color: var(--bg-card); border: 1px solid var(--border-light); padding: 30px; border-radius: 6px; margin-top: 35px; }
+        .portfolio-box h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 10px; color: var(--text-dark); text-transform: uppercase; letter-spacing: 1px; }
+        .portfolio-box p { color: var(--text-muted); font-size: 1rem; margin-bottom: 15px; }
+        .portfolio-link { display: inline-flex; align-items: center; text-decoration: none; color: var(--text-dark); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .portfolio-link span { color: var(--teal-accent); margin-left: 5px; font-size: 1rem; }
+        .portfolio-link:hover { color: var(--teal-accent); }
         
+        .credentials-list { list-style: none; color: var(--text-muted); font-size: 0.95rem; margin-top: 15px; border-top: 1px solid var(--border-light); padding-top: 15px; }
+        .credentials-list li { margin-bottom: 6px; position: relative; padding-left: 15px; }
+        .credentials-list li::before { content: "▪"; color: var(--teal-accent); position: absolute; left: 0; font-size: 0.8rem; }
+
         footer { background-color: #f8fafc; padding: 40px 20px; border-top: 1px solid var(--border-light); text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 80px; }
     </style>
 </head>
@@ -77,29 +89,35 @@
     </header>
     
     <main class="main-container">
-        <h1 class="page-title">Our Neutrals & Dispute Specialists</h1>
-        <p class="page-subtitle">Decades of combined corporate, state-agency, and institutional resolution expertise.</p>
+        <nav class="context-matrix">
+            <a href="process.html" class="matrix-link">Panels</a>
+            <a href="mediators.html" class="matrix-link active">The Mediator</a>
+            <a href="https://www.newarkfirm.com" class="matrix-link" target="_blank">Litigation & Counsel <span>&nearr;</span></a>
+            <a href="intake.html" class="matrix-link">Schedule</a>
+        </nav>
         
         <section class="profile-row">
             <div class="profile-photo-area">
                 <div class="profile-image-container">
-                    <img src="headshot.jpg" alt="Robert Newark, Esq." class="profile-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div class="fallback-text" style="display: none;">Robert Newark, Esq.<br><span style="font-size: 0.8rem; opacity: 0.7;">Portrait Sync Pending</span></div>
+                    <img src="headshot.jpg" alt="Robert C. Newark, III, Esq." class="profile-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="fallback-text" style="display: none;">Robert C. Newark, III, Esq.<br><span style="font-size: 0.8rem; opacity: 0.7;">Portrait Sync Pending</span></div>
                 </div>
             </div>
             <div class="profile-text-area">
-                <h2>Robert Newark, Esq.</h2>
-                <div class="title-tag">Principal Mediator & Managing Director</div>
+                <div class="panel-role">Neutral Panel Chair</div>
+                <h2>Robert C. Newark, III, Esq.</h2>
+                <div class="bar-tag">Mediator & Arbitrator • TX & OK State Bars</div>
                 
-                <p class="bio-p">Robert Newark is an accomplished executive attorney, corporate CEO, and former state agency counsel with nearly two decades of comprehensive experience navigating complex regulatory architectures, administering dispute resolution frameworks, and conducting high-consequence independent investigations. Known for his objective demeanor and analytical clarity, Robert has spent his career serving as a trusted, neutral advisor to senior executives, judicial officers, and high-level institutional stakeholders.</p>
-                <p class="bio-p">As the Chief Executive Officer and Managing Partner of a regional professional services enterprise, Robert directs internal labor and employment compliance, adjudicates complex workplace grievances, and resolves multi-jurisdictional operational disputes across distributed footprints spanning six distinct state jurisdictions (TX, OK, NM, CO, AR). His background includes deep expertise in Commercial & Business conflicts, workplace liability triage, and independent corporate fact-finding. Additionally, Robert brings specialized proficiency to the technology sector, having spearheaded the complete structural modernization of cross-state enterprise infrastructure into a secured, zero-trust cloud network to guarantee absolute information integrity and confidentiality.</p>
-                <p class="bio-p">Prior to his executive corporate tenure, Robert served as Assistant General Counsel for the Oklahoma Employment Security Commission. In this role, he commanded high-volume state administrative enforcement and labor portfolios, interpreting complex state and federal labor laws while providing expert, neutral advice to administrative law judges and agency executives. His re-engineering of the agency's compliance frameworks successfully optimized dispute timelines, resulting in a 50% compression of outstanding administrative liabilities.</p>
+                <p class="bio-p">Robert C. Newark, III brings calculated objectivity, rapid legal assessment capability, and decades of trial experience to the Alternative Dispute Resolution grid. Having served as lead trial counsel across complex business, bankruptcy, and civil court systems, he holds unique insight into structural courtroom risk vectors.</p>
+                <p class="bio-p">Robert maintains focus on breaking down adversarial deadlocks by mapping objective financial reality grids, clearing psychological hurdles, and drafting ironclad mediation agreements that withstand post-session challenges.</p>
 
-                <div class="credentials-box">
-                    <h3>Education & Credentials</h3>
-                    <ul>
+                <div class="portfolio-box">
+                    <h3>Litigation & Counsel Portfolio</h3>
+                    <p>Outside of neutral arbitration and dispute resolution panels, Robert directs a premier trial defense and corporate transactional practice handling high-stakes portfolios.</p>
+                    <a href="https://www.newarkfirm.com" class="portfolio-link" target="_blank">Explore Newark Firm Legal Practice <span>&nearr;</span></a>
+                    
+                    <ul class="credentials-list">
                         <li>Juris Doctor (J.D.) — Oklahoma City University School of Law</li>
-                        <li>Active Member in Good Standing — Supreme Court of Texas & Oklahoma Bar Association</li>
                         <li>Admitted to practice before the U.S. 5th and 10th Circuit Court of Appeals</li>
                         <li>Honorable Discharge & 100% Service-Connected Disabled Veteran — United States Army</li>
                     </ul>
@@ -115,21 +133,22 @@
                 </div>
             </div>
             <div class="profile-text-area">
+                <div class="panel-role">Senior Panel Member</div>
                 <h2>Tyler Wilson, Esq.</h2>
-                <div class="title-tag">Senior Panel Member</div>
+                <div class="bar-tag">Mediator & Resolution Specialist • AK, OK, WI, & SD State Bars</div>
                 
-                <p class="bio-p">Tyler Wilson is a seasoned dispute resolution executive and senior attorney with over a decade of dedicated legal practice specialized in systematic litigation lifecycle management, high-consequence corporate negotiations, and multi-jurisdictional conflict triage. A highly versatile advocate recognized for structural objectivity and strategic analytical clarity, Tyler has spent his career spearheading complex commercial settlements and administering scaled resolution dockets across diverse legal and regulatory landscapes.</p>
-                <p class="bio-p">As a cornerstone of the panel’s advanced resolution operations, Tyler directs structured business negotiations and orchestrates multi-jurisdictional dispute portfolios spanning commercial financial defense, creditor-debtor frameworks, corporate collections, and real estate asset conflicts. His background includes the comprehensive management of high-stakes civil dockets. Notably, during his tenure as a senior attorney with the National Litigation Law Group, Tyler commanded a massive regional resolution engine, successfully adjudicating and resolving over 7,500 commercial and consumer finance cases, resulting in the structured settlement of more than $42 million in outstanding financial liabilities.</p>
-                <p class="bio-p">In addition to his extensive financial defense and business asset practice, Tyler brings specialized multi-jurisdictional proficiency to high-level compliance sectors. His prior background includes deep institutional management of advanced federal immigration law frameworks with the Velie Law Firm. In this capacity, he served as a trusted advisor navigating complex U.S. visa compliance architectures and regulatory protocols for elite international stakeholders, including world-class corporate leaders, renowned research scientists, and global sports organizations.</p>
+                <p class="bio-p">Tyler Wilson brings dynamic conflict triage, highly-scaled negotiation parameters, and over a decade of systematic docket resolution experience to the Alternative Dispute Resolution platform. Having successfully resolved more than 7,500 intense financial conflict cases and structured over $42 million in debt settlements, he holds unparalleled experience managing high-volume enterprise friction pools.</p>
+                <p class="bio-p">Tyler excels at accelerating multi-jurisdictional settlements by analyzing structural risk vectors, isolating consumer and commercial leverage indicators, and converting complex litigation roadblocks into objective, calculated closure matrices.</p>
 
-                <div class="credentials-box">
-                    <h3>Education & Credentials</h3>
-                    <ul>
+                <div class="portfolio-box">
+                    <h3>Litigation & Counsel Portfolio</h3>
+                    <p>Outside of neutral panel arbitration, Tyler oversees sophisticated litigation lifecycles, broad financial defense strategies, and complex regulatory compliance dockets.</p>
+                    <a href="https://www.newarkfirm.com" class="portfolio-link" target="_blank">Explore Newark Firm Legal Practice <span>&nearr;</span></a>
+                    
+                    <ul class="credentials-list">
                         <li>Juris Doctor (J.D.) — University of Oklahoma College of Law</li>
-                        <li>Master of Public Health (M.P.H., Healthcare Administration & Policy) — University of Oklahoma College of Public Health</li>
-                        <li>Bachelor of Science (B.S., Biology; Minors in Chemistry & Political Science) — University of the Ozarks</li>
-                        <li>Licensed Attorney in Active Good Standing — Alaska, Oklahoma, Wisconsin, and South Dakota State Bar Associations</li>
-                        <li>Certified Official & Collegiate Representative — United States Tennis Association (USTA) & Intercollegiate Tennis Association (ITA)</li>
+                        <li>Master of Public Health (M.P.H., Healthcare Administration & Policy) — University of Oklahoma</li>
+                        <li>Former University Alumni Board Treasurer & Certified Official — USTA & ITA</li>
                     </ul>
                 </div>
             </div>
